@@ -1,16 +1,19 @@
 #include "bag.h"
 #include "dice.h"
-#include <std>
+#include <cstdlib>
+#include <ctime>
 
-class Bag
+Dice dicebag[5];//set to 5 for now. will change later
+
+Dice Bag::GetRandomDice()
 {
+	srand(static_cast<unsigned int>(time(0)));
+	return dicebag[std::rand()];
+}
 
-	Dice[] dicebag;
-
-	Dice getRandomDice()
-	{
-		std::srand(std::time({}));//uses current time as seed for random gen
-		return dicebag[std::rand()];
-	}
+void Bag::AddDiceToBag(Dice dice)
+{
+	dicebag[0] = dice;
 
 }
+

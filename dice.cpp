@@ -1,18 +1,26 @@
-
 #include "dice.h"
+#include <cstdlib>
+#include <ctime>
 
-class Dice
+int diceFaces;
+
+void Dice::setDiceFaces(int x)
 {
-	private int diceFaces;
+	diceFaces = x;
+}
 
-	void setDiceFaces(int x)
-	{
-		diceFaces = x;
-	}
+int Dice::getDiceFaces()
+{
+	return diceFaces;
+}
 
-	int getDiceFaces()
-	{
-		return diceFaces;
-	}
+int Dice::rollDice()
+{
+	srand(static_cast<unsigned int>(time(0)));
+	return ((rand() % diceFaces)+1);
+}
 
+Dice::Dice()
+{
+	diceFaces = 6;
 }
