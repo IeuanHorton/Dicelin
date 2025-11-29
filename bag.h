@@ -6,7 +6,11 @@
 class Bag
 {
 	public: 
-		Dice GetRandomDice();
-		void AddDiceToBag(Dice dice);
+		Dice getRandomDice();
+		void addDiceToBag(Dice dice);
+		int getDiceBagSize();
+
+	private:
+		void makeNewDiceBagUp(Dice oldDiceBag[]);
 };
 #endif
