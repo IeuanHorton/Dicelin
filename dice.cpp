@@ -14,9 +14,9 @@ int Dice::getDiceFaces()
 	return diceFaces;
 }
 
-int Dice::rollDice()
+int Dice::rollDice(int salt)
 {
-	srand(static_cast<unsigned int>(time(0)));
+	srand(static_cast<unsigned int>(time(0)) * salt);
 	return ((rand() % diceFaces)+1);
 }
 
