@@ -48,8 +48,8 @@ int main(int argc, char* argv[])
 		{
 			int playerRoll, aiRoll;
 			currentRound++;
-			playerRoll = dice.rollDice(dice.getDiceFaces());//STUPID. GIVES THE SAME ROLL ALWAYS A TIE. I HATE THE INBUILT RND
-			aiRoll = aiDice.rollDice(aiDice.getDiceFaces());
+			playerRoll = dice.rollDice();
+			aiRoll = aiDice.rollDice();
 
 			displayPlayerRoll(playerRoll);
 			displayAiRoll(aiRoll);
@@ -71,6 +71,8 @@ int main(int argc, char* argv[])
 			}
 			displayScore(score);
 			aiDice.setDiceFaces(currentRound + 1);
+
+			std::cout << "PLAYER DICEFACES: " << dice.getDiceFaces() << " | AI DICEFACES: " << aiDice.getDiceFaces() << std::endl;
 		}
 		else if(!input.compare("q") || !input.compare("Q"))
 		{

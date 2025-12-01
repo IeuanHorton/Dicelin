@@ -8,6 +8,6 @@ class Dice
 
 		void setDiceFaces(int x);
 		int getDiceFaces();
-		int rollDice(int salt);
+		int rollDice();
 };
 #endif
